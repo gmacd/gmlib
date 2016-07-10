@@ -1,6 +1,7 @@
 #pragma once
 
-namespace radiate {
+namespace gmlib {
+	
 	class Vec4
 	{
 	public:
@@ -10,6 +11,11 @@ namespace radiate {
 		}
 
 		Vec4 operator-() const { return Vec4(x, y, z, w); }
+
+		Vec4 operator+=(const Vec4& v) { x += v.x;  y += v.y;  z += v.z;  w += v.w;  return *this; }
+		Vec4 operator-=(const Vec4& v) { x -= v.x;  y -= v.y;  z -= v.z;  w -= v.w;  return *this; }
+		Vec4 operator*=(const Vec4& v) { x *= v.x;  y *= v.y;  z *= v.z;  w *= v.w;  return *this; }
+		Vec4 operator/=(const Vec4& v) { x /= v.x;  y /= v.y;  z /= v.z;  w /= v.w;  return *this; }
 
 		float r() const { return x; }
 		float g() const { return y; }

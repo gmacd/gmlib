@@ -7,7 +7,7 @@
 #include "stb_image_write.h"
 
 
-namespace radiate {
+namespace gmlib {
 
     Image::Image(int w, int h):
         _w(w), _h(h), _pixels(w*h, Vec4())

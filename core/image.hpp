@@ -4,7 +4,7 @@
 #include "vec4.hpp"
 
 
-namespace radiate {
+namespace gmlib {
 
     class Image
     {

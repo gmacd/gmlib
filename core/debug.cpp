@@ -7,7 +7,7 @@
 #include <execinfo.h>
 #include <unistd.h>
 
-namespace radiate {
+namespace gmlib {
 
     int addr2line(char const * const program_name, void const * const addr);
     void posix_print_stack_trace();

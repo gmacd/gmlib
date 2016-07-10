@@ -4,7 +4,7 @@
 #include "vec4.hpp"
 
 
-namespace radiate {
+namespace gmlib {
 
     // Unsigned 8-bit RGB
     class Rgb8

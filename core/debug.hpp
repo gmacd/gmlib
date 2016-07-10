@@ -2,7 +2,7 @@
 
 #include <sstream>
 
-namespace radiate {
+namespace gmlib {
 	void csRegisterSignalHandlers();
     void Logf(const char* fmt, ...);
 }
