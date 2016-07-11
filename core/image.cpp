@@ -14,12 +14,12 @@ namespace gmlib {
     {
     }
 
-    void Image::Set(int x, int y, const Vec4& colour)
+    void Image::set(int x, int y, const Vec4& colour)
     {
         _pixels[x + y*_w] = colour;
     }
 
-    void Image::WritePng(const char* path)
+    void Image::writePng(const char* path)
     {
         // Convert to bytes
         std::vector<Rgb8> buf(_w*_h);

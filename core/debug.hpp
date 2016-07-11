@@ -3,6 +3,6 @@
 #include <sstream>
 
 namespace gmlib {
-	void csRegisterSignalHandlers();
-    void Logf(const char* fmt, ...);
+	void registerSignalHandlers();
+    void logf(const char* fmt, ...);
 }

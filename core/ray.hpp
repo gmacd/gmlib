@@ -6,10 +6,14 @@ namespace gmlib {
 	{
 	public:
 		Ray() {}
-		Ray(const Vec4& origin, const Vec4& dir): origin(origin), dir(dir) {}
+		Ray(const Vec4& origin, const Vec4& dir): _origin(origin), _dir(dir) {}
 
-		Vec4 point(float t) { return origin + t*dir; }
+		Vec4 point(float t) { return _origin + t*_dir; }
 
-		Vec4 origin, dir;
+		const Vec4& origin() const { return _origin; }
+		const Vec4& dir() const { return _dir; }
+
+	private:
+		Vec4 _origin, _dir;
 	};
 }

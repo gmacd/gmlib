@@ -63,12 +63,12 @@ namespace gmlib {
         exit(1);
     }
 
-    void csRegisterSignalHandlers()
+    void registerSignalHandlers()
     {
         signal(SIGSEGV, handleSigSegv);
     }
 
-    void Logf(const char* fmt, ...)
+    void logf(const char* fmt, ...)
     {
         va_list args;
         va_start(args, fmt);

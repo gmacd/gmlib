@@ -11,12 +11,12 @@ namespace gmlib {
     public:
         Image(int w, int h);
 
-        int Width() const { return _w; }
-        int Height() const { return _h; }
+        int width() const { return _w; }
+        int height() const { return _h; }
 
-        void Set(int x, int y, const Vec4& colour);
+        void set(int x, int y, const Vec4& colour);
 
-        void WritePng(const char* path);
+        void writePng(const char* path);
 
     private:
         int _w, _h;
