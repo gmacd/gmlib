@@ -19,5 +19,5 @@ namespace gmlib {
 	};
 
 
-	bool intersectRaySphere(const Sphere& s, const Ray& r);
+	float intersectRaySphere(const Sphere& s, const Ray& r);
 }

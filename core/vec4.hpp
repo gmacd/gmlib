@@ -7,6 +7,9 @@ namespace gmlib {
 	class Vec4
 	{
 	public:
+		static Vec4 Zero;
+		static Vec4 One;
+
 		Vec4(): Vec4(0, 0, 0, 0) {}
 		Vec4(const Vec4& v): Vec4(v.x, v.y, v.z, v.w) {}
 		Vec4(float x, float y, float z, float w = 0.0f): x(x), y(y), z(z), w(w) {}

@@ -10,7 +10,7 @@ namespace gmlib {
 		Ray() {}
 		Ray(const Point4& origin, const Vec4& dir): _origin(origin), _dir(dir) {}
 
-		Point4 point(float t) { return _origin + t*_dir; }
+		Point4 point(float t) const { return _origin + t*_dir; }
 
 		const Point4& origin() const { return _origin; }
 		const Vec4& dir() const { return _dir; }
