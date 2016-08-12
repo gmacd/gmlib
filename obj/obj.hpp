@@ -1,22 +1,10 @@
 #pragma once
 
-#include "core/vec4.hpp"
 #include "core/ray.hpp"
+#include "core/vec4.hpp"
+#include "intersect.hpp"
 
 namespace gmlib {
-
-	class HitRecord
-	{
-	public:
-		HitRecord(const Vec4& point, const Vec4& normal, float t):
-			_point(point), _normal(normal), _t(t) {}
-
-	private:
-		Vec4 _point;
-		Vec4 _normal;
-		float _t;
-	};
-
 
 	class Obj {
 	public:
@@ -24,7 +12,18 @@ namespace gmlib {
 	};
 
 
-	class Sphere: public Obj {
-		
+	class SphereObj: public Obj {
+	public:
+		SphereObj(const Point4& centre, float radius): _sphere(centre, radius) {}
+		SphereObj(const Sphere& s): _sphere(s) {}
+
+		virtual bool hit(const Ray& r, float tMin, float tMax, HitRecord& hit) const;
+
+		const Sphere& sphere() const { return _sphere; }
+		const Point4& centre() const { return _sphere.centre(); }
+		float radius() const { return _sphere.radius(); }
+
+	private:
+		Sphere _sphere;
 	};
 }
