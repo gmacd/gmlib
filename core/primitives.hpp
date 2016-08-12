@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Ray.hpp"
-#include "Vec4.hpp"
+#include "vec4.hpp"
 
 namespace gmlib {
+
 	class Sphere
 	{
 	public:
@@ -18,6 +18,4 @@ namespace gmlib {
 		float _radius;
 	};
 
-
-	float intersectRaySphere(const Sphere& s, const Ray& r);
 }
