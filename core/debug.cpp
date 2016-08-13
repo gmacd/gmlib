@@ -1,13 +1,17 @@
 // TODO C++-ify
 
+#ifndef _WIN32
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <signal.h>
 #include <execinfo.h>
 #include <unistd.h>
+#endif
 
 namespace gmlib {
+
+#ifndef _WIN32
 
     int addr2line(char const * const program_name, void const * const addr);
     void posix_print_stack_trace();
@@ -75,4 +79,11 @@ namespace gmlib {
         vprintf(fmt, args);
         va_end(args);
     }
+
+#else // _WIN32
+
+	void registerSignalHandlers() {}
+	void logf(const char* fmt, ...) {}
+
+#endif // _WIN32
 }

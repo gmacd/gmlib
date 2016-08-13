@@ -15,7 +15,6 @@ namespace gmlib {
 		HitRecord(const HitRecord& hit):
 			_point(hit._point), _normal(hit._normal), _t(hit._t) {}
 
-	private:
 		Point4 _point;
 		Vec4 _normal;
 		float _t;

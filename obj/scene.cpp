@@ -1,33 +1,27 @@
 #include "scene.hpp"
 
+#include "core/ray.hpp"
+#include "obj/obj.hpp"
+#include "obj/intersect.hpp"
+
 namespace gmlib {
 
 	void Scene::add(Obj* obj)
 	{
-		_obj.add(obj);
+		_objs.push_back(obj);
 	}
 
-	std::iterator<Obj*> Scene::begin()
-	{
-		return _obj.begin();
-	}
-
-	std::iterator<Obj*> Scene::end()
-	{
-		return _obj.end();
-	}
-	
 	bool Scene::hit(const Ray& ray, float tMin, float tMax, HitRecord& hit) const
 	{
 		HitRecord currHit;
-		bool hitAnything = false;
+		bool anythingHit = false;
 		auto nearestT = tMax;
-		for (auto&& shape: _obj)
+		for (auto&& shape: _objs)
 		{
-			if (shape.hit(ray, tMin, nearestT, currHit))
+			if (shape->hit(ray, tMin, nearestT, currHit))
 			{
-				hitAnything = true;
-				nearestT = currHit.t;
+				anythingHit = true;
+				nearestT = currHit._t;
 				hit = currHit;
 			}
 		}

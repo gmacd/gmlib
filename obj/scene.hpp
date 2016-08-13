@@ -4,6 +4,10 @@
 
 namespace gmlib {
 
+	class Obj;
+	class Ray;
+	class HitRecord;
+
 	class Scene
 	{
 	public:
@@ -11,12 +15,9 @@ namespace gmlib {
 		
 		void add(Obj* obj);
 		
-		std::iterator<Obj*> begin();
-		std::iterator<Obj*> end();
-		
 		virtual bool hit(const Ray& ray, float tMin, float tMax, HitRecord& hit) const;
 		
 	private:
-		std::Vector<Obj*> _objs;
+		std::vector<Obj*> _objs;
 	};
 }
