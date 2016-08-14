@@ -9,7 +9,7 @@ namespace gmlib {
 		float b = dot(oc, r.dir());
 		float c = dot(oc, oc) - s.radius()*s.radius();
 		float discriminant = b*b - a*c;
-		if (discriminant < 0)
+		if (discriminant > 0)
 		{
 			float sqrtDisc = std::sqrt(discriminant); 
 			float t = (-b - sqrtDisc) / a;
