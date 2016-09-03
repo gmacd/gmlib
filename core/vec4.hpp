@@ -22,6 +22,11 @@ namespace gmlib {
 
 		Vec4 operator-() const { return Vec4(x, y, z, w); }
 
+		Vec4 operator+=(float s) { x += s;  y += s;  z += s;  w += s;  return *this; }
+		Vec4 operator-=(float s) { x -= s;  y -= s;  z -= s;  w -= s;  return *this; }
+		Vec4 operator*=(float s) { x *= s;  y *= s;  z *= s;  w *= s;  return *this; }
+		Vec4 operator/=(float s) { x /= s;  y /= s;  z /= s;  w /= s;  return *this; }
+
 		Vec4 operator+=(const Vec4& v) { x += v.x;  y += v.y;  z += v.z;  w += v.w;  return *this; }
 		Vec4 operator-=(const Vec4& v) { x -= v.x;  y -= v.y;  z -= v.z;  w -= v.w;  return *this; }
 		Vec4 operator*=(const Vec4& v) { x *= v.x;  y *= v.y;  z *= v.z;  w *= v.w;  return *this; }
