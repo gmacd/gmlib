@@ -10,8 +10,10 @@ namespace gmlib {
 	{
 	public:
 		HitRecord(): _point(), _normal(), _t(0) {}
+
 		HitRecord(const Point4& point, const Vec4& normal, float t):
 			_point(point), _normal(normal), _t(t) {}
+
 		HitRecord(const HitRecord& hit):
 			_point(hit._point), _normal(hit._normal), _t(hit._t) {}
 
