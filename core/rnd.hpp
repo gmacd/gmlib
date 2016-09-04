@@ -2,6 +2,7 @@
 
 #include <random>
 
+#include "vec4.hpp"
 
 namespace gmlib {
 	
@@ -11,6 +12,10 @@ namespace gmlib {
 		Rnd();
 
 		float nextFloat();
+		float nextFloat(float scale);
+
+		Vec4 nextVecInUnitCube();
+		Vec4 nextVecInUnitSphere();
 
 	private:
 		std::random_device _device;
